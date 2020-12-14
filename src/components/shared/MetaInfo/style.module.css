@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  color: var(--ion-color-medium);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+}
+
+.chip:empty {
+  display: none;
+}
+
+.chip:not(:first-of-type)::before {
+  content: ' • ';
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.response {
+  margin-left: auto;
+}
+
+.response > * + * {
+  margin-left: 5px;
+}

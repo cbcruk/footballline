@@ -1,0 +1,11 @@
+.header {
+  border-bottom: 1px solid var(--ion-color-light);
+}
+
+.metainfo {
+  font-size: 14px;
+}
+
+.replies {
+  border-top: 1px solid var(--ion-color-light);
+}

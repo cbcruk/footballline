@@ -1,0 +1,8 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 2px;
+}
