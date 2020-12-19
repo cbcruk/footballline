@@ -19,9 +19,10 @@ function List() {
       <Menu />
       <IonPage id="list-page">
         <Header
-          onRefresh={() => {
-            mutate()
+          onRefresh={async () => {
             handleScroll()
+            await setSize(1)
+            await mutate()
           }}
         />
         {isValidating && <IonProgressBar type="indeterminate" />}
