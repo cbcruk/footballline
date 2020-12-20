@@ -1,9 +1,12 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import { IonItem, IonLabel, IonList } from '@ionic/react'
 import { Metainfo } from '../../shared'
 import styles from './style.module.css'
 
 function Items({ list }) {
+  const { categoryDepth01 } = useParams()
+
   return (
     <IonList>
       {list.map((item) => (
@@ -12,7 +15,7 @@ function Items({ list }) {
           routerLink={{
             pathname: `/detail/${item.idx}`,
             state: {
-              categoryDepth01: item.categoryDepth01
+              categoryDepth01: categoryDepth01 || item.categoryDepth01
             }
           }}
         >

@@ -1,41 +1,34 @@
 import React from 'react'
-import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonBackButton,
-  IonButtons,
-  IonButton,
-  IonIcon
-} from '@ionic/react'
+import { IonButton, IonIcon, IonLabel, IonList, IonItem } from '@ionic/react'
 import { useLocation } from 'react-router-dom'
-import { refreshOutline, shareOutline } from 'ionicons/icons'
+import { chevronForwardOutline, shareOutline } from 'ionicons/icons'
+import { Popover, Header as SharedHeader } from '../../shared'
 import { BOARD_ITEMS_CATEGORY } from '../../../constants'
-import Popover from './Popover'
 
 function Header({ categoryDepth01, onRefresh }) {
   const location = useLocation()
-  const title =
-    BOARD_ITEMS_CATEGORY[location.state?.categoryDepth01 ?? categoryDepth01]
+  const categoryDepth01State =
+    location.state?.categoryDepth01 ?? categoryDepth01
+  const title = BOARD_ITEMS_CATEGORY[categoryDepth01State]
 
   return (
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot="start">
-          <IonBackButton />
-        </IonButtons>
-        <IonTitle>{title}</IonTitle>
-        <IonButtons slot="end">
-          <IonButton onClick={onRefresh}>
-            <IonIcon slot="start" icon={refreshOutline} />
-          </IonButton>
-          <IonButton onClick={() => {}}>
-            <IonIcon slot="start" icon={shareOutline} />
-          </IonButton>
-          <Popover />
-        </IonButtons>
-      </IonToolbar>
-    </IonHeader>
+    <SharedHeader
+      title={title}
+      onRefresh={onRefresh}
+      defaultHref={`/board/${categoryDepth01State}`}
+    >
+      <IonButton onClick={() => {}}>
+        <IonIcon slot="start" icon={shareOutline} />
+      </IonButton>
+      <Popover>
+        <IonList>
+          <IonItem button>
+            <IonLabel>Soccerline에서 보기</IonLabel>
+            <IonIcon icon={chevronForwardOutline} slot="end" />
+          </IonItem>
+        </IonList>
+      </Popover>
+    </SharedHeader>
   )
 }
 

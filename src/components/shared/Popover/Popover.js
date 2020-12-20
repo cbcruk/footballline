@@ -1,18 +1,11 @@
-import React, { useReducer } from 'react'
-import {
-  IonButton,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonPopover
-} from '@ionic/react'
-import { chevronForwardOutline, ellipsisVerticalOutline } from 'ionicons/icons'
+import React, { useCallback, useReducer } from 'react'
+import { IonButton, IonIcon, IonPopover } from '@ionic/react'
+import { ellipsisVerticalOutline } from 'ionicons/icons'
 
 const SHOW_POPOVER = 'SHOW_POPOVER'
 const HIDE_POPOVER = 'HIDE_POPOVER'
 
-function Popover() {
+function Popover({ children }) {
   const [state, dispatch] = useReducer(
     (state, action) => {
       switch (action.type) {
@@ -37,36 +30,36 @@ function Popover() {
       event: null
     }
   )
+  const hidePopover = useCallback(
+    () =>
+      dispatch({
+        type: HIDE_POPOVER
+      }),
+    [dispatch]
+  )
 
   return (
-    <>
+    <div onClick={(e) => hidePopover()}>
       <IonButton
-        onClick={(event) =>
+        onClick={(event) => {
+          event.stopPropagation()
+
           dispatch({
             type: SHOW_POPOVER,
             payload: event
           })
-        }
+        }}
       >
         <IonIcon slot="start" icon={ellipsisVerticalOutline} />
       </IonButton>
       <IonPopover
         event={state.event}
         isOpen={state.showPopover}
-        onDidDismiss={() =>
-          dispatch({
-            type: HIDE_POPOVER
-          })
-        }
+        onDidDismiss={hidePopover}
       >
-        <IonList>
-          <IonItem button>
-            <IonLabel>Soccerline에서 보기</IonLabel>
-            <IonIcon icon={chevronForwardOutline} slot="end" />
-          </IonItem>
-        </IonList>
+        {children}
       </IonPopover>
-    </>
+    </div>
   )
 }
 

@@ -14,7 +14,7 @@ import '@ionic/react/css/text-transformation.css'
 import '@ionic/react/css/flex-utils.css'
 import '@ionic/react/css/display.css'
 import './theme/variables.css'
-import { List, Detail } from './pages'
+import { List, Detail, Best } from './pages'
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
         <IonReactRouter>
           <IonRouterOutlet>
             <Route path="/board/:categoryDepth01" component={List} />
+            <Route path="/best/:categoryDepth01" component={Best} />
             <Route path="/detail/:id" component={Detail} />
             <Redirect exact from="/" to="/board/0" />
           </IonRouterOutlet>
