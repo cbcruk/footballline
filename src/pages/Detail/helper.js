@@ -1,5 +1,5 @@
 export function getWidth() {
-  const isCellular = window.navigator.connection.type === 'cellular'
+  const isCellular = window.navigator?.connection?.type === 'cellular'
   const width = isCellular ? document.body.clientWidth - 32 : 0
 
   return width
