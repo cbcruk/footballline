@@ -1,25 +1,18 @@
 import React from 'react'
-import useSWR from 'swr'
-import classNames from 'classnames'
-import rpc from '../../../lib/rpc'
 import List from './List'
-import { getList } from './helper'
+import useComments from './useComments'
+import styles from './style.module.css'
 
 function Comments({ id, replies, memberId }) {
-  const {
-    data = {
-      comments: [],
-      totalElements: 0
-    }
-  } = useSWR(`/board/${id}/comments`, rpc)
-  const list = getList(data.comments)
+  const { list, total } = useComments({
+    id,
+    replies
+  })
 
   return (
-    <details open className={classNames(['ion-padding-top'])}>
-      <summary>{data.comments.length || replies}개의 댓글</summary>
-      <div className="ion-margin-top">
-        <List list={list} authorId={memberId} />
-      </div>
+    <details open className={styles.wrapper}>
+      <summary className={styles.summary}>{total || replies}개의 댓글</summary>
+      <List list={list} authorId={memberId} />
     </details>
   )
 }

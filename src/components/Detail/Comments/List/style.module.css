@@ -3,7 +3,7 @@
 }
 
 .item {
-  border-top: 1px solid var(--ion-color-light);
+  border-top: 1px solid var(--ion-color-lighter);
   padding-top: 8px;
   padding-bottom: 8px;
 }
@@ -24,5 +24,8 @@
 }
 
 .response {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 4px;
   margin-left: 8px;
 }

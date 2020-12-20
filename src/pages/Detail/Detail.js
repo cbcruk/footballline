@@ -44,7 +44,11 @@ function Detail() {
               />
             </div>
             <div
-              className={styles.content}
+              className={classNames([
+                'ion-padding-top',
+                'ion-padding-bottom',
+                styles.content
+              ])}
               dangerouslySetInnerHTML={{
                 __html: getHtml(data?.contentHtml)
               }}

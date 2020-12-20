@@ -1,6 +1,6 @@
 import React, { useCallback, useReducer } from 'react'
 import { IonButton, IonIcon, IonPopover } from '@ionic/react'
-import { ellipsisVerticalOutline } from 'ionicons/icons'
+import { ellipsisVertical } from 'ionicons/icons'
 
 const SHOW_POPOVER = 'SHOW_POPOVER'
 const HIDE_POPOVER = 'HIDE_POPOVER'
@@ -50,7 +50,7 @@ function Popover({ children }) {
           })
         }}
       >
-        <IonIcon slot="start" icon={ellipsisVerticalOutline} />
+        <IonIcon slot="start" icon={ellipsisVertical} />
       </IonButton>
       <IonPopover
         event={state.event}
