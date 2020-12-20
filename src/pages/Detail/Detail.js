@@ -43,7 +43,8 @@ function Detail() {
                 likes={data?.likes}
               />
             </div>
-            <p
+            <div
+              className={styles.content}
               dangerouslySetInnerHTML={{
                 __html: getHtml(data?.contentHtml)
               }}
