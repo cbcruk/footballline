@@ -7,6 +7,7 @@ import {
   IonRow,
   IonSpinner
 } from '@ionic/react'
+import styles from './style.module.css'
 
 function List({ isLoading, data }) {
   return (
@@ -22,7 +23,7 @@ function List({ isLoading, data }) {
           routerLink={`/detail/${item.idx}`}
           detail={false}
         >
-          <IonNote slot="start" color="dark">
+          <IonNote slot="start" color="dark" className={styles.index}>
             {index + 1}
           </IonNote>
           <IonLabel>{item.subject}</IonLabel>
