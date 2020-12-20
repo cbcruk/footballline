@@ -7,6 +7,7 @@
   "dependencies": {
     "@ionic/react": "5.5.1",
     "@ionic/react-router": "5.5.1",
+    "anchorme": "^2.1.2",
     "chrome-aws-lambda": "^5.5.0",
     "classnames": "2.2.6",
     "crypto-js": "4.0.0",
@@ -22,8 +23,8 @@
     "swr": "0.3.9"
   },
   "devDependencies": {
-    "typescript": "3.8.3",
-    "puppeteer": "^5.5.0"
+    "puppeteer": "^5.5.0",
+    "typescript": "3.8.3"
   },
   "scripts": {
     "start": "react-scripts start",

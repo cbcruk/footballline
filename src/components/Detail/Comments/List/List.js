@@ -2,6 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import { getTimeFromNow } from '../../../../lib/dayjs'
 import Icon from '../../../shared/Icon'
+import { getAnchormeHtml } from './helper'
 import styles from './style.module.css'
 
 function List({ list, authorId, className }) {
@@ -36,7 +37,16 @@ function List({ list, authorId, className }) {
                 </span>
               </div>
               <div className={styles.comment}>
-                {status === 0 ? <strike>삭제된 댓글 입니다.</strike> : comment}
+                {status === 0 ? (
+                  <strike>삭제된 댓글 입니다.</strike>
+                ) : (
+                  <p
+                    className="ion-no-margin"
+                    dangerouslySetInnerHTML={{
+                      __html: getAnchormeHtml(comment)
+                    }}
+                  />
+                )}
                 {comments && (
                   <List
                     list={comments}

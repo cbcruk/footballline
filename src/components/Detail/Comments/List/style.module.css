@@ -33,3 +33,7 @@
   grid-gap: 4px;
   margin-left: 8px;
 }
+
+.comment a[target='_blank']::after {
+  content: '';
+}
