@@ -1,22 +1,12 @@
 import React from 'react'
-import {
-  IonItem,
-  IonLabel,
-  IonList,
-  IonNote,
-  IonRow,
-  IonSpinner
-} from '@ionic/react'
+import { IonItem, IonLabel, IonList, IonNote } from '@ionic/react'
+import { Spinner } from '../../shared'
 import styles from './style.module.css'
 
 function List({ isLoading, data }) {
   return (
     <IonList>
-      {isLoading && (
-        <IonRow class="ion-justify-content-center ion-padding">
-          <IonSpinner name="crescent" />
-        </IonRow>
-      )}
+      {isLoading && <Spinner className="ion-padding" />}
       {data.map((item, index) => (
         <IonItem
           key={item.idx}

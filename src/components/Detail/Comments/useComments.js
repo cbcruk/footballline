@@ -9,7 +9,8 @@ function useComments({ id, replies }) {
       comments: [],
       totalElements: 0
     },
-    mutate
+    mutate,
+    error
   } = useSWR(`/board/${id}/comments`, rpc)
   const list = getList(data.comments)
 
@@ -17,7 +18,11 @@ function useComments({ id, replies }) {
     mutate()
   }, [mutate, replies])
 
-  return { list, total: data.comments.length }
+  return {
+    list,
+    total: data.comments.length,
+    isLoading: !error && !data
+  }
 }
 
 export default useComments

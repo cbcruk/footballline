@@ -1,13 +1,7 @@
 import React, { createContext } from 'react'
-import {
-  IonContent,
-  IonPage,
-  IonProgressBar,
-  IonRow,
-  IonSpinner
-} from '@ionic/react'
+import { IonContent, IonPage, IonProgressBar } from '@ionic/react'
 import classNames from 'classnames'
-import { Metainfo } from '../../components/shared'
+import { Metainfo, Spinner } from '../../components/shared'
 import { Header } from '../../components/Detail'
 import useDetail from './useDetail'
 import { getHtml } from './helper'
@@ -28,9 +22,7 @@ function Detail() {
       {data && isValidating && <IonProgressBar type="indeterminate" />}
       <IonContent className="ion-padding">
         {isLoading ? (
-          <IonRow class="ion-justify-content-center">
-            <IonSpinner name="crescent" />
-          </IonRow>
+          <Spinner />
         ) : (
           <>
             <div className={classNames(['ion-padding-bottom', styles.header])}>
