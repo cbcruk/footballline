@@ -23,6 +23,10 @@
   margin-right: 4px;
 }
 
+.chip:empty {
+  margin-right: 0;
+}
+
 .response {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

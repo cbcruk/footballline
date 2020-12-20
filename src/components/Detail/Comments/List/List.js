@@ -16,7 +16,8 @@ function List({ list, authorId, className }) {
           likes,
           dislikes,
           comment,
-          comments
+          comments,
+          status
         }) => {
           return (
             <div key={idx} className={styles.item}>
@@ -35,7 +36,7 @@ function List({ list, authorId, className }) {
                 </span>
               </div>
               <div className={styles.comment}>
-                {comment}
+                {status === 0 ? <strike>삭제된 댓글 입니다.</strike> : comment}
                 {comments && (
                   <List
                     list={comments}
