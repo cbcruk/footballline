@@ -12,6 +12,7 @@ function Detail() {
     <IonPage>
       <Header
         categoryDepth01={data?.categoryDepth01}
+        shareTitle={data?.subject ?? ''}
         onRefresh={() => mutate()}
       />
       {data && isValidating && <IonProgressBar type="indeterminate" />}

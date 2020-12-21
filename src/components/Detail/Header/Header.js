@@ -1,11 +1,15 @@
 import React from 'react'
-import { IonButton, IonIcon, IonList } from '@ionic/react'
+import { IonList } from '@ionic/react'
 import { useLocation, useParams } from 'react-router-dom'
-import { shareOutline } from 'ionicons/icons'
-import { Popover, Header as SharedHeader, PopoverItem } from '../../shared'
+import {
+  Popover,
+  Header as SharedHeader,
+  PopoverItem,
+  Share
+} from '../../shared'
 import { BOARD_ITEMS_CATEGORY } from '../../../constants'
 
-function Header({ categoryDepth01, onRefresh }) {
+function Header({ categoryDepth01, shareTitle, onRefresh }) {
   const location = useLocation()
   const { id } = useParams()
   const categoryDepth01State =
@@ -18,9 +22,11 @@ function Header({ categoryDepth01, onRefresh }) {
       onRefresh={onRefresh}
       defaultHref={`/board/${categoryDepth01State}`}
     >
-      <IonButton onClick={() => {}}>
-        <IonIcon slot="start" icon={shareOutline} />
-      </IonButton>
+      <Share
+        data={{
+          title: shareTitle
+        }}
+      />
       <Popover>
         <IonList>
           <PopoverItem
