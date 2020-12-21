@@ -8,13 +8,12 @@ import {
   IonButton,
   IonIcon,
   IonMenuToggle,
-  IonList,
-  IonItem,
-  IonLabel
+  IonList
 } from '@ionic/react'
 import { menuOutline, refresh } from 'ionicons/icons'
 import { BOARD_ITEMS_CATEGORY } from '../../../constants'
 import Popover from '../../shared/Popover'
+import { PopoverItem } from '../../shared'
 
 function Header({ onRefresh }) {
   const { categoryDepth01 } = useParams()
@@ -37,9 +36,9 @@ function Header({ onRefresh }) {
           </IonButton>
           <Popover>
             <IonList>
-              <IonItem button routerLink={`/best/${categoryDepth01}`}>
-                <IonLabel>베스트글 보기</IonLabel>
-              </IonItem>
+              <PopoverItem routerLink={`/best/${categoryDepth01}`}>
+                베스트글 보기
+              </PopoverItem>
             </IonList>
           </Popover>
         </IonButtons>

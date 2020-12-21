@@ -1,12 +1,13 @@
 import React from 'react'
-import { IonButton, IonIcon, IonLabel, IonList, IonItem } from '@ionic/react'
-import { useLocation } from 'react-router-dom'
-import { chevronForwardOutline, shareOutline } from 'ionicons/icons'
-import { Popover, Header as SharedHeader } from '../../shared'
+import { IonButton, IonIcon, IonList } from '@ionic/react'
+import { useLocation, useParams } from 'react-router-dom'
+import { shareOutline } from 'ionicons/icons'
+import { Popover, Header as SharedHeader, PopoverItem } from '../../shared'
 import { BOARD_ITEMS_CATEGORY } from '../../../constants'
 
 function Header({ categoryDepth01, onRefresh }) {
   const location = useLocation()
+  const { id } = useParams()
   const categoryDepth01State =
     location.state?.categoryDepth01 ?? categoryDepth01
   const title = BOARD_ITEMS_CATEGORY[categoryDepth01State]
@@ -22,10 +23,12 @@ function Header({ categoryDepth01, onRefresh }) {
       </IonButton>
       <Popover>
         <IonList>
-          <IonItem button>
-            <IonLabel>Soccerline에서 보기</IonLabel>
-            <IonIcon icon={chevronForwardOutline} slot="end" />
-          </IonItem>
+          <PopoverItem
+            href={`https://soccerline.kr/board/${id}`}
+            target="_blank"
+          >
+            Soccerline에서 보기
+          </PopoverItem>
         </IonList>
       </Popover>
     </SharedHeader>
