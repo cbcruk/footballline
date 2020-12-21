@@ -21,7 +21,7 @@ function useComments({ id, replies }) {
   return {
     list,
     total: data.comments.length,
-    isLoading: !error && !data
+    isLoading: !error && list.length === 0
   }
 }
 
