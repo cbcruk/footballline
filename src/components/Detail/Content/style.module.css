@@ -1,0 +1,32 @@
+.header {
+  border-bottom: 1px solid var(--ion-color-lighter);
+}
+
+.metainfo {
+  font-size: 14px;
+}
+
+.content p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.content p:first-of-type img {
+  margin-top: 0;
+}
+
+.content img {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  vertical-align: top;
+}
+
+.content img + img {
+  margin-top: 0;
+}
+
+.content iframe {
+  width: 100%;
+  height: calc(calc(100vw - 32px) * 0.5625);
+  vertical-align: top;
+}

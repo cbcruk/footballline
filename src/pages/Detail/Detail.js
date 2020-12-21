@@ -1,12 +1,7 @@
 import React, { createContext } from 'react'
 import { IonContent, IonPage, IonProgressBar } from '@ionic/react'
-import classNames from 'classnames'
-import { Metainfo, Spinner } from '../../components/shared'
-import { Header } from '../../components/Detail'
+import { Content, Header, Comments } from '../../components/Detail'
 import useDetail from './useDetail'
-import { getHtml } from './helper'
-import styles from './style.module.css'
-import Comments from '../../components/Detail/Comments'
 
 export const DetailContext = createContext({})
 
@@ -21,38 +16,13 @@ function Detail() {
       />
       {data && isValidating && <IonProgressBar type="indeterminate" />}
       <IonContent className="ion-padding">
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <>
-            <div className={classNames(['ion-padding-bottom', styles.header])}>
-              <h2>{data?.subject}</h2>
-              <Metainfo
-                className={styles.metainfo}
-                memberNickname={data?.memberNickname}
-                writeDate={data?.writeDate}
-                views={data?.views}
-                likes={data?.likes}
-              />
-            </div>
-            <div
-              className={classNames([
-                'ion-padding-top',
-                'ion-padding-bottom',
-                styles.content
-              ])}
-              dangerouslySetInnerHTML={{
-                __html: getHtml(data?.contentHtml)
-              }}
-            />
-            {data?.replies > 0 && (
-              <Comments
-                id={data?.idx}
-                replies={data?.replies}
-                memberId={data?.memberId}
-              />
-            )}
-          </>
+        <Content data={data} isLoading={isLoading} />
+        {data?.replies > 0 && (
+          <Comments
+            id={data?.idx}
+            replies={data?.replies}
+            memberId={data?.memberId}
+          />
         )}
       </IonContent>
     </IonPage>
