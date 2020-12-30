@@ -1,5 +1,6 @@
 import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 import { IonApp, IonRouterOutlet } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import { SWRConfig } from 'swr'
@@ -23,6 +24,7 @@ function App() {
         revalidateOnFocus: false
       }}
     >
+      <Helmet defaultTitle="풋볼라인" titleTemplate="풋볼라인 - %s" />
       <IonApp>
         <IonReactRouter>
           <IonRouterOutlet>

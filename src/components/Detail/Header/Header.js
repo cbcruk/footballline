@@ -1,6 +1,7 @@
 import React from 'react'
 import { IonList } from '@ionic/react'
 import { useLocation, useParams } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 import {
   Popover,
   Header as SharedHeader,
@@ -22,6 +23,9 @@ function Header({ categoryDepth01, shareTitle, onRefresh }) {
       onRefresh={onRefresh}
       defaultHref={`/board/${categoryDepth01State}`}
     >
+      <Helmet>
+        <title>{shareTitle}</title>
+      </Helmet>
       <Share
         data={{
           title: shareTitle
