@@ -28,5 +28,6 @@
 .content iframe {
   width: 100%;
   height: calc(calc(100vw - 32px) * 0.5625);
+  border: 0;
   vertical-align: top;
 }
