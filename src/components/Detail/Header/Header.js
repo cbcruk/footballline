@@ -34,7 +34,7 @@ function Header({ categoryDepth01, shareTitle, onRefresh }) {
       <Popover>
         <IonList>
           <PopoverItem
-            href={`https://soccerline.kr/board/${id}`}
+            href={`${process.env.API_URL}/board/${id}`}
             target="_blank"
           >
             Soccerline에서 보기

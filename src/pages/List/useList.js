@@ -1,27 +1,16 @@
 import { useParams } from 'react-router-dom'
 import uniqBy from 'lodash/uniqBy'
 import { useSWRInfinite } from 'swr'
-import { stringifyUrl } from 'query-string'
-import rpc from '../../lib/rpc'
 
 function useList() {
-  const params = useParams()
+  const { categoryDepth01 } = useParams()
   const { data, loading, isValidating, mutate, size, setSize } = useSWRInfinite(
-    (page) => {
-      const key = stringifyUrl({
-        url: '/board',
-        query: {
-          ...params,
-          page
-        }
-      })
-
-      return key
-    },
+    (page) => `/api/list?categoryDepth01=${categoryDepth01}&page=${page}`,
     async (url) => {
-      const response = await rpc(url)
+      const response = await fetch(url)
+      const data = await response.json()
 
-      return response.content
+      return data.content
     }
   )
   const list = data ? uniqBy([].concat(...data), 'idx') : []

@@ -1,6 +1,3 @@
-export const CORS_URL = 'https://9cw31.sse.codesandbox.io/proxy/soccerline'
-export const SOCCERLINE_URL = 'https://soccerline.kr'
-
 export const BOARD_ITEMS = [
   {
     category: 0,

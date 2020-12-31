@@ -4,6 +4,7 @@ import { BOARD_ITEMS_CATEGORY } from '../../../constants'
 import { getTimeFromNow } from '../../../lib/dayjs'
 import Icon from '../Icon'
 import styles from './style.module.css'
+import { chatbubbleOutline, heart } from 'ionicons/icons'
 
 function Chip({ children }) {
   return <span className={styles.chip}>{children}</span>
@@ -26,8 +27,8 @@ function Metainfo({
       <Chip>{BOARD_ITEMS_CATEGORY[categoryDepth01]}</Chip>
 
       <span className={styles.response}>
-        <Icon name="heart" label={likes} />
-        <Icon name="chatbubbleOutline" label={replies} />
+        <Icon name={heart} label={likes} />
+        <Icon name={chatbubbleOutline} label={replies} />
       </span>
     </div>
   )

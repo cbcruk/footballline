@@ -1,5 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
+import { heart, heartDislike } from 'ionicons/icons'
 import { getTimeFromNow } from '../../../../lib/dayjs'
 import Icon from '../../../shared/Icon'
 import { getAnchormeHtml } from './helper'
@@ -32,8 +33,8 @@ function List({ list, authorId, className }) {
                 </span>
                 <span className={styles.chip}>{getTimeFromNow(writeDate)}</span>
                 <span className={classNames([styles.response])}>
-                  <Icon name="heart" label={likes} />
-                  <Icon name="heartDislike" label={dislikes} />
+                  <Icon name={heart} label={likes} />
+                  <Icon name={heartDislike} label={dislikes} />
                 </span>
               </div>
               <div className={styles.comment}>

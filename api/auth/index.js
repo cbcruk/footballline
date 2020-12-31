@@ -16,7 +16,7 @@ async function auth(req, res) {
     : await puppeteer.launch()
   const page = await browser.newPage()
 
-  await page.goto('https://soccerline.kr/member/login?logout')
+  await page.goto(`${process.env.API_URL}/member/login?logout`)
 
   await page.type('input[type="text"]', id)
   await page.type('input[type="password"]', password)

@@ -1,4 +1,4 @@
-import React from 'react'
+import { Suspense } from 'react'
 import { Redirect, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { IonApp, IonRouterOutlet } from '@ionic/react'
@@ -16,6 +16,7 @@ import '@ionic/react/css/flex-utils.css'
 import '@ionic/react/css/display.css'
 import './theme/variables.css'
 import { List, Detail, Best } from './pages'
+import { Spinner } from './components/shared'
 
 function App() {
   return (
@@ -27,12 +28,14 @@ function App() {
       <Helmet defaultTitle="풋볼라인" titleTemplate="풋볼라인 - %s" />
       <IonApp>
         <IonReactRouter>
-          <IonRouterOutlet>
-            <Route path="/board/:categoryDepth01" component={List} />
-            <Route path="/best/:categoryDepth01" component={Best} />
-            <Route path="/detail/:id" component={Detail} />
-            <Redirect exact from="/" to="/board/0" />
-          </IonRouterOutlet>
+          <Suspense fallback={<Spinner />}>
+            <IonRouterOutlet>
+              <Route path="/board/:categoryDepth01" component={List} />
+              <Route path="/best/:categoryDepth01" component={Best} />
+              <Route path="/detail/:id" component={Detail} />
+              <Redirect exact from="/" to="/board/0" />
+            </IonRouterOutlet>
+          </Suspense>
         </IonReactRouter>
       </IonApp>
     </SWRConfig>

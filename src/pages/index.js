@@ -1,3 +1,5 @@
-export { default as List } from './List'
-export { default as Detail } from './Detail'
-export { default as Best } from './Best'
+import { lazy } from 'react'
+
+export const List = lazy(() => import('./List'))
+export const Detail = lazy(() => import('./Detail'))
+export const Best = lazy(() => import('./Best'))
