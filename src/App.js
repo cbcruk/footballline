@@ -15,7 +15,7 @@ import '@ionic/react/css/text-transformation.css'
 import '@ionic/react/css/flex-utils.css'
 import '@ionic/react/css/display.css'
 import './theme/variables.css'
-import { List, Detail, Best } from './pages'
+import { List, Detail, Best, Search } from './pages'
 import { Spinner } from './components/shared'
 
 function App() {
@@ -32,6 +32,7 @@ function App() {
             <IonRouterOutlet>
               <Route path="/board/:categoryDepth01" component={List} />
               <Route path="/best/:categoryDepth01" component={Best} />
+              <Route path="/search/:categoryDepth01" component={Search} />
               <Route path="/detail/:id" component={Detail} />
               <Redirect exact from="/" to="/board/0" />
             </IonRouterOutlet>

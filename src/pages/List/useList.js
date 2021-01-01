@@ -1,11 +1,18 @@
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import uniqBy from 'lodash/uniqBy'
 import { useSWRInfinite } from 'swr'
 
 function useList() {
+  const location = useLocation()
   const { categoryDepth01 } = useParams()
   const { data, loading, isValidating, mutate, size, setSize } = useSWRInfinite(
-    (page) => `/api/list?categoryDepth01=${categoryDepth01}&page=${page}`,
+    (page) => {
+      const params = new URLSearchParams(location.search)
+      params.append('categoryDepth01', categoryDepth01)
+      params.append('page', page)
+
+      return `/api/list?${params.toString()}`
+    },
     async (url) => {
       const response = await fetch(url)
       const data = await response.json()

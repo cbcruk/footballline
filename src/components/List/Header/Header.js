@@ -15,6 +15,7 @@ import { menuOutline, refresh } from 'ionicons/icons'
 import { BOARD_ITEMS_CATEGORY } from '../../../constants'
 import Popover from '../../shared/Popover'
 import { PopoverItem } from '../../shared'
+import Search from './Search'
 
 function Header({ onRefresh }) {
   const { categoryDepth01 } = useParams()
@@ -35,6 +36,7 @@ function Header({ onRefresh }) {
         </IonButtons>
         <IonTitle>{title}</IonTitle>
         <IonButtons slot="end">
+          <Search />
           <IonButton onClick={onRefresh}>
             <IonIcon slot="start" icon={refresh} />
           </IonButton>

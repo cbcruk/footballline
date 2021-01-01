@@ -1,56 +1,15 @@
-import React, { useCallback, useReducer } from 'react'
+import React, { useCallback, useEffect, useReducer } from 'react'
 import { IonButton, IonIcon, IonPopover } from '@ionic/react'
 import { ellipsisVertical } from 'ionicons/icons'
+import usePopover from './usePopover'
 
-const SHOW_POPOVER = 'SHOW_POPOVER'
-const HIDE_POPOVER = 'HIDE_POPOVER'
-
-function Popover({ children }) {
-  const [state, dispatch] = useReducer(
-    (state, action) => {
-      switch (action.type) {
-        case SHOW_POPOVER:
-          return {
-            ...state,
-            showPopover: true,
-            event: action.payload
-          }
-        case HIDE_POPOVER:
-          return {
-            ...state,
-            showPopover: false,
-            event: null
-          }
-        default:
-          return state
-      }
-    },
-    {
-      showPopover: false,
-      event: null
-    }
-  )
-  const hidePopover = useCallback(
-    () =>
-      dispatch({
-        type: HIDE_POPOVER
-      }),
-    [dispatch]
-  )
+function Popover({ icon = ellipsisVertical, children }) {
+  const { state, showPopover, hidePopover } = usePopover()
 
   return (
-    <div onClick={(e) => hidePopover()}>
-      <IonButton
-        onClick={(event) => {
-          event.stopPropagation()
-
-          dispatch({
-            type: SHOW_POPOVER,
-            payload: event
-          })
-        }}
-      >
-        <IonIcon slot="start" icon={ellipsisVertical} />
+    <>
+      <IonButton onClick={showPopover}>
+        <IonIcon slot="start" icon={icon} />
       </IonButton>
       <IonPopover
         event={state.event}
@@ -59,7 +18,7 @@ function Popover({ children }) {
       >
         {children}
       </IonPopover>
-    </div>
+    </>
   )
 }
 
