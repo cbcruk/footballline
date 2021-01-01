@@ -1,4 +1,3 @@
-import { useIonRouter } from '@ionic/react'
 import { useCallback, useReducer } from 'react'
 import useRouter from './useRouter'
 

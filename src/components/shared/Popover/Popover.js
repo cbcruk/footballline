@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useReducer } from 'react'
+import React from 'react'
 import { IonButton, IonIcon, IonPopover } from '@ionic/react'
 import { ellipsisVertical } from 'ionicons/icons'
 import usePopover from './usePopover'
