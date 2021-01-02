@@ -16,9 +16,8 @@ function Search() {
           e.preventDefault()
 
           const input = await searchRef.current.getInputElement()
-          const search = `searchWindow=&searchType=0&searchText=${input.value}`
 
-          history.push(`/search/${params.categoryDepth01}?${search}`)
+          history.push(`/search/${params.categoryDepth01}/${input.value}`)
         }}
       >
         <IonSearchbar ref={searchRef} searchIcon={colorWandOutline} />

@@ -32,7 +32,10 @@ function App() {
             <IonRouterOutlet>
               <Route path="/board/:categoryDepth01" component={List} />
               <Route path="/best/:categoryDepth01" component={Best} />
-              <Route path="/search/:categoryDepth01" component={Search} />
+              <Route
+                path="/search/:categoryDepth01/:searchText"
+                component={Search}
+              />
               <Route path="/detail/:id" component={Detail} />
               <Redirect exact from="/" to="/board/0" />
             </IonRouterOutlet>

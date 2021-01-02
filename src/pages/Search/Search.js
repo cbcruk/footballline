@@ -7,8 +7,8 @@ import {
   IonProgressBar
 } from '@ionic/react'
 import { Items } from '../../components/List'
+import Header from '../../components/Search/Header'
 import useList from '../List/useList'
-import Header from '../../components/Search/Header/Header'
 
 function Search() {
   const { list, loading, isValidating, size, setSize } = useList()
