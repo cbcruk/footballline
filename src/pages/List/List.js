@@ -6,13 +6,15 @@ import {
   IonPage,
   IonProgressBar
 } from '@ionic/react'
+import { Spinner } from '../../components/shared'
 import { Header, Menu, Items } from '../../components/List'
 import useList from './useList'
 import useContentScroll from './useContentScroll'
 
 function List() {
-  const { list, loading, isValidating, size, setSize, mutate } = useList()
+  const { list, isLoading, isValidating, size, setSize, mutate } = useList()
   const { contentRef, handleScroll } = useContentScroll()
+  const isPageSize1 = list.length > 0 && size === 1
 
   return (
     <>
@@ -25,19 +27,24 @@ function List() {
             await mutate()
           }}
         />
-        {isValidating && <IonProgressBar type="indeterminate" />}
+        {isPageSize1 && isValidating && <IonProgressBar type="indeterminate" />}
         <IonContent ref={contentRef}>
-          <Items list={list} />
-          <IonInfiniteScroll
-            threshold="100px"
-            disabled={loading}
-            onIonInfinite={async (e) => {
-              await setSize(size + 1)
-              e.target.complete()
-            }}
-          >
-            <IonInfiniteScrollContent />
-          </IonInfiniteScroll>
+          {isLoading && <Spinner />}
+          {!isLoading && (
+            <>
+              <Items list={list} />
+              <IonInfiniteScroll
+                threshold="100px"
+                disabled={isLoading}
+                onIonInfinite={async (e) => {
+                  await setSize(size + 1)
+                  e.target.complete()
+                }}
+              >
+                <IonInfiniteScrollContent />
+              </IonInfiniteScroll>
+            </>
+          )}
         </IonContent>
       </IonPage>
     </>

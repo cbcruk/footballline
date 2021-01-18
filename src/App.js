@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 import { Redirect, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
-import { IonApp, IonRouterOutlet } from '@ionic/react'
+import { IonApp, IonRouterOutlet, setupConfig } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import { SWRConfig } from 'swr'
 import '@ionic/react/css/core.css'
@@ -17,6 +17,10 @@ import '@ionic/react/css/display.css'
 import './theme/variables.css'
 import { List, Detail, Best, Search } from './pages'
 import { Spinner } from './components/shared'
+
+setupConfig({
+  spinner: 'crescent'
+})
 
 function App() {
   return (

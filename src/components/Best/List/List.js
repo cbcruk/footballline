@@ -11,6 +11,7 @@ function List({ isLoading, data }) {
         <IonItem
           key={item.idx}
           routerLink={`/detail/${item.idx}`}
+          routerDirection="none"
           detail={false}
         >
           <IonNote slot="start" color="dark" className={styles.index}>

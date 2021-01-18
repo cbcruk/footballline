@@ -4,7 +4,7 @@ import { useSWRInfinite } from 'swr'
 
 function useList() {
   const { categoryDepth01, searchText } = useParams()
-  const { data, loading, isValidating, mutate, size, setSize } = useSWRInfinite(
+  const { data, error, isValidating, mutate, size, setSize } = useSWRInfinite(
     (page) => {
       const params = new URLSearchParams()
       params.append('categoryDepth01', categoryDepth01)
@@ -26,7 +26,7 @@ function useList() {
 
   return {
     list,
-    loading,
+    isLoading: !data && !error,
     mutate,
     isValidating,
     size,

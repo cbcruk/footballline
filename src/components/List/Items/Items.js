@@ -18,6 +18,7 @@ function Items({ list }) {
               categoryDepth01: categoryDepth01 || item.categoryDepth01
             }
           }}
+          routerDirection="none"
         >
           <IonLabel>
             <h2>{item.subject}</h2>
