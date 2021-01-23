@@ -22,3 +22,5 @@ yarn-error.log*
 
 debug.log
 .env
+
+webview/build

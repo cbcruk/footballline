@@ -15,6 +15,7 @@
     "dayjs": "1.9.7",
     "ionicons": "5.2.3",
     "lodash": "4.17.20",
+    "pkg": "^4.4.9",
     "puppeteer-core": "^5.5.0",
     "query-string": "6.13.7",
     "react": "17.0.1",
@@ -32,7 +33,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "pkg": "pkg webview/pptr.js"
   },
   "eslintConfig": {
     "extends": [
