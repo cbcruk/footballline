@@ -19,7 +19,7 @@ function List() {
     handleScroll()
     await setSize(1)
     await mutate()
-  }, [])
+  }, [handleScroll, mutate, setSize])
   const isPageSize1 = list.length > 0 && size === 1
 
   useKeyboard({ handleRefresh })

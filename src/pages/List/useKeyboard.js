@@ -3,18 +3,15 @@ import { useEffect } from 'react'
 function useKeyboard({ handleRefresh }) {
   useEffect(() => {
     function handleKeydown(e) {
-      switch (e.key) {
-        case 'r':
-          handleRefresh()
-        default:
-          break
+      if (e.key === 'r') {
+        handleRefresh()
       }
     }
 
     document.addEventListener('keydown', handleKeydown)
 
     return () => document.removeEventListener('keydown', handleKeydown)
-  }, [])
+  }, [handleRefresh])
 }
 
 export default useKeyboard
