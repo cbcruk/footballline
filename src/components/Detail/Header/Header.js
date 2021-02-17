@@ -1,7 +1,9 @@
 import React from 'react'
-import { IonList } from '@ionic/react'
+import { IonButton, IonIcon, IonList } from '@ionic/react'
+import { clipboardOutline } from 'ionicons/icons'
 import { useLocation, useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
+import { useAtom } from 'jotai'
 import {
   Popover,
   Header as SharedHeader,
@@ -9,13 +11,15 @@ import {
   Share
 } from '../../shared'
 import { BOARD_ITEMS_CATEGORY } from '../../../constants'
+import { fetchUserAtom } from '../../../atom/auth'
 
-function Header({ categoryDepth01, shareTitle, onRefresh }) {
+function Header({ categoryDepth01, shareTitle, onRefresh, onScrap }) {
   const location = useLocation()
   const { id } = useParams()
   const categoryDepth01State =
     location.state?.categoryDepth01 ?? categoryDepth01
   const title = BOARD_ITEMS_CATEGORY[categoryDepth01State]
+  const [user] = useAtom(fetchUserAtom)
 
   return (
     <SharedHeader
@@ -26,6 +30,11 @@ function Header({ categoryDepth01, shareTitle, onRefresh }) {
       <Helmet>
         <title>{shareTitle}</title>
       </Helmet>
+      {user && (
+        <IonButton onClick={onScrap}>
+          <IonIcon slot="start" icon={clipboardOutline} />
+        </IonButton>
+      )}
       <Share
         data={{
           title: shareTitle

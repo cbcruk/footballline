@@ -11,7 +11,7 @@ function Spinner({ className }) {
         className
       ])}
     >
-      <IonSpinner />
+      <IonSpinner color="primary" />
     </IonRow>
   )
 }

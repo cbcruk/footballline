@@ -1,17 +1,17 @@
-import * as admin from 'firebase-admin'
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
-const isDev = process.env.NODE_ENV === 'development'
-
-admin.initializeApp({
-  credential: admin.credential.cert(
-    isDev
-      ? require('./serviceAccountKey.json')
-      : {
-          projectId: process.env.FIREBASE_PROJECT_ID,
-          clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-          privateKey: process.env.FIREBASE_PRIVATE_KEY
-        }
-  )
+const firebaseApp = firebase.initializeApp({
+  apiKey: 'AIzaSyALm3_bJrja4jZ1l4nsVHViZ9ttk2bLtic',
+  authDomain: 'footballline-71637.firebaseapp.com',
+  projectId: 'footballline-71637',
+  storageBucket: 'footballline-71637.appspot.com',
+  messagingSenderId: '648162873867',
+  appId: '1:648162873867:web:dfc555284cf8b92b57ed0e'
 })
 
-export default admin
+export function getIdToken() {
+  return firebaseApp.auth().currentUser.getIdToken()
+}
+
+export default firebaseApp

@@ -1,25 +1,33 @@
-import admin from '../../src/lib/firebase'
+import { pick } from 'lodash'
+import admin from '../../src/lib/firebaseAdmin'
 
 async function scrap(req, res) {
   const db = admin.firestore()
-  const scrapRef = db.collection('scrap')
+  const { uid } = await admin.auth().verifyIdToken(req.headers.authorization)
+  const scrapRef = db.doc(`me/${uid}`).collection('scrap')
 
   if (req.method === 'POST') {
-    const response = await scrapRef.add(req.body)
-    const path = response.path
+    const body = JSON.parse(req.body)
 
-    res.json({
-      path
-    })
+    await scrapRef.doc(`${body.idx}`).set(body)
+
+    res.send(200)
   }
 
   if (req.method === 'GET') {
     const snapshot = await scrapRef.get()
     const docs = snapshot.docs.map((doc) => {
-      return {
-        id: doc.id,
-        data: doc.data()
-      }
+      return pick(doc.data(), [
+        'idx',
+        'categoryDepth01',
+        'subject',
+        'memberNickname',
+        'writeDate',
+        'views',
+        'categoryDepth01',
+        'likes',
+        'replies'
+      ])
     })
 
     res.json(docs)

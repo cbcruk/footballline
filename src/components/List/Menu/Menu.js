@@ -23,6 +23,13 @@ function Menu() {
       </IonHeader>
       <IonContent>
         <IonList>
+          <IonListHeader>내 메뉴</IonListHeader>
+          <IonMenuToggle auto-hide="false">
+            <IonItem routerLink="/scrap">
+              <IonLabel>스크랩</IonLabel>
+            </IonItem>
+          </IonMenuToggle>
+
           <IonListHeader>게시판</IonListHeader>
           <IonMenuToggle auto-hide="false">
             {BOARD_ITEMS.map((board) => {

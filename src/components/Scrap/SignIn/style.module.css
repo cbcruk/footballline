@@ -1,0 +1,7 @@
+.loading :global(.loading-wrapper) {
+  flex-direction: column;
+}
+
+.loading :global(.loading-content) {
+  margin-left: 0 !important;
+}
