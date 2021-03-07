@@ -1,17 +1,9 @@
-import * as admin from 'firebase-admin'
+import { getFirebaseAdmin } from '@cbcruk/firebase-admin'
 
-const isDev = process.env.NODE_ENV === 'development'
-
-admin.initializeApp({
-  credential: admin.credential.cert(
-    isDev
-      ? require('./serviceAccountKey.json')
-      : {
-          projectId: process.env.FIREBASE_PROJECT_ID,
-          clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-          privateKey: process.env.FIREBASE_PRIVATE_KEY
-        }
-  )
+const admin = getFirebaseAdmin({
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+  privateKey: process.env.FIREBASE_PRIVATE_KEY
 })
 
 export default admin

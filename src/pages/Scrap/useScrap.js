@@ -1,5 +1,5 @@
+import { getIdToken } from '@cbcruk/firebase-app'
 import useSWR from 'swr'
-import { getIdToken } from '../../lib/firebase'
 
 function useScrap(auth) {
   const result = useSWR(['/api/scrap', auth], async (url) => {

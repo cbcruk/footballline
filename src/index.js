@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { SWRConfig } from 'swr'
 import { Provider } from 'jotai'
 import App from './App'
+import './lib/firebaseApp'
 
 const rootElement = document.getElementById('root')
 

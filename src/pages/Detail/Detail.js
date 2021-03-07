@@ -1,9 +1,9 @@
 import React, { createContext, useCallback } from 'react'
 import { IonContent, IonPage, IonProgressBar } from '@ionic/react'
 import { useAtom } from 'jotai'
+import { getIdToken } from '@cbcruk/firebase-app'
 import { Content, Header, Comments } from '../../components/Detail'
 import { toastAtom } from '../../components/shared/Toast/Toast'
-import { getIdToken } from '../../lib/firebase'
 import useDetail from './useDetail'
 
 export const DetailContext = createContext({})

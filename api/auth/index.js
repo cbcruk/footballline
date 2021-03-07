@@ -1,19 +1,9 @@
-import puppeteer from 'puppeteer'
-import puppeteerCore from 'puppeteer-core'
-import chrome from 'chrome-aws-lambda'
-
-const isLamda = process.env.AWS_LAMBDA_FUNCTION_VERSION
+import { getBrowser } from '@cbcruk/puppeteer'
 
 async function auth(req, res) {
   const { id, password } = req.body
 
-  const browser = isLamda
-    ? await puppeteerCore.launch({
-        args: chrome.args,
-        executablePath: await chrome.executablePath,
-        headless: chrome.headless
-      })
-    : await puppeteer.launch()
+  const browser = await getBrowser()
   const page = await browser.newPage()
 
   await page.goto(`${process.env.API_URL}/member/login?logout`)

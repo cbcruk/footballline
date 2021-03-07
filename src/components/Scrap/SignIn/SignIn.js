@@ -7,8 +7,8 @@ import {
 } from '@ionic/react'
 import { useAtom } from 'jotai'
 import { useState } from 'react'
+import firebaseApp from '../../../lib/firebaseApp'
 import { userAtom } from '../../../atom/auth'
-import firebaseApp from '../../../lib/firebase'
 import styles from './style.module.css'
 
 const REQUEST = 'request'

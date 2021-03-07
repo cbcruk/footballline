@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
+import { getTimeFromNow } from '@cbcruk/utils'
 import { BOARD_ITEMS_CATEGORY } from '../../../constants'
-import { getTimeFromNow } from '../../../lib/dayjs'
 import Icon from '../Icon'
 import styles from './style.module.css'
 import { chatbubbleOutline, heart } from 'ionicons/icons'

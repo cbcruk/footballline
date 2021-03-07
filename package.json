@@ -5,22 +5,20 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@cbcruk/firebase-admin": "^0.0.1",
+    "@cbcruk/firebase-app": "^0.0.2",
+    "@cbcruk/puppeteer": "^0.0.1",
+    "@cbcruk/utils": "^0.0.7",
     "@ionic/react": "5.5.1",
     "@ionic/react-router": "5.5.1",
     "anchorme": "^2.1.2",
     "axios": "^0.21.1",
-    "chrome-aws-lambda": "^5.5.0",
     "classnames": "2.2.6",
     "crypto-js": "4.0.0",
-    "dayjs": "1.9.7",
-    "firebase": "^8.2.7",
-    "firebase-admin": "^9.5.0",
-    "firebaseui": "^4.7.3",
     "ionicons": "5.2.3",
     "jotai": "^0.14.1",
     "lodash": "4.17.20",
     "pkg": "^4.4.9",
-    "puppeteer-core": "^5.5.0",
     "query-string": "6.13.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",
@@ -30,7 +28,6 @@
     "swr": "0.3.9"
   },
   "devDependencies": {
-    "puppeteer": "^5.5.0",
     "typescript": "3.8.3"
   },
   "scripts": {

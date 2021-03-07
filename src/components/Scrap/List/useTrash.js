@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 import differenceBy from 'lodash/differenceBy'
-import { getIdToken } from '../../../lib/firebase'
+import { getIdToken } from '@cbcruk/firebase-app'
 
 function useTrash(list) {
   const [trash, update] = useState([])

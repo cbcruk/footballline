@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { heart, heartDislike } from 'ionicons/icons'
-import { getTimeFromNow } from '../../../../lib/dayjs'
+import { getTimeFromNow } from '@cbcruk/utils'
 import Icon from '../../../shared/Icon'
 import { getAnchormeHtml } from './helper'
 import styles from './style.module.css'
