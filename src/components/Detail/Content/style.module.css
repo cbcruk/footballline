@@ -7,10 +7,15 @@
 }
 
 .content * {
-  all: inherit !important;
+  all: unset;
+}
+
+.content div {
+  display: block;
 }
 
 .content p {
+  display: block;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -20,6 +25,7 @@
 }
 
 .content img {
+  max-width: 100%;
   margin-top: 16px;
   margin-bottom: 16px;
   vertical-align: top;
@@ -32,6 +38,7 @@
 .content iframe {
   width: 100%;
   height: calc(calc(100vw - 32px) * 0.5625);
+  aspect-ratio: 16/9;
   border: 0;
   vertical-align: top;
 }
