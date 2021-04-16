@@ -4,6 +4,21 @@ import { Metainfo, Spinner } from '../../shared'
 import { getHtml } from './helper'
 import styles from './style.module.css'
 
+export function Viewer({ html }) {
+  return (
+    <div
+      className={classNames([
+        'ion-padding-top',
+        'ion-padding-bottom',
+        styles.content
+      ])}
+      dangerouslySetInnerHTML={{
+        __html: html
+      }}
+    />
+  )
+}
+
 function Content({ isLoading, data }) {
   if (isLoading) {
     return <Spinner />
@@ -24,17 +39,8 @@ function Content({ isLoading, data }) {
           views={data?.views}
           likes={data?.likes}
         />
+        <Viewer html={getHtml(data?.contentHtml)} />
       </div>
-      <div
-        className={classNames([
-          'ion-padding-top',
-          'ion-padding-bottom',
-          styles.content
-        ])}
-        dangerouslySetInnerHTML={{
-          __html: getHtml(data?.contentHtml)
-        }}
-      />
     </>
   )
 }
