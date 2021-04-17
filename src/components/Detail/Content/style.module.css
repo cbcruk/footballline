@@ -6,6 +6,10 @@
   font-size: 14px;
 }
 
+.content {
+  white-space: pre-line;
+}
+
 .content > *[style] {
   all: unset !important;
   display: block !important;
@@ -18,6 +22,27 @@
 
 .content p:first-of-type img {
   margin-top: 0;
+}
+
+.content picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  padding: 0.5rem;
+}
+
+.content picture::before {
+  content: '이미지 열기';
+}
+
+.content picture:global(.is-done) {
+  padding: 0;
+  border: 0;
+}
+
+.content picture:global(.is-done)::before {
+  content: none;
 }
 
 .content img {

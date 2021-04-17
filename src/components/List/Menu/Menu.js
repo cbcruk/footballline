@@ -12,6 +12,7 @@ import {
   IonToolbar
 } from '@ionic/react'
 import { BOARD_ITEMS } from '../../../constants'
+import DataSaver from './DataSaver'
 
 function Menu() {
   return (
@@ -29,6 +30,8 @@ function Menu() {
               <IonLabel>스크랩</IonLabel>
             </IonItem>
           </IonMenuToggle>
+
+          <DataSaver />
 
           <IonListHeader>게시판</IonListHeader>
           <IonMenuToggle auto-hide="false">

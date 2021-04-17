@@ -2,10 +2,35 @@ import axios from '../../src/lib/http'
 import decode from '../../src/lib/decode'
 
 async function detail(req, res) {
-  const response = await axios.get(`/board/${req.query.id}`)
+  const { id } = req.query
+  const response = await axios.get(`/board/${id}`)
   const data = response.data.match(/data-article="(\w+)"/)[1]
+  const decoded = JSON.parse(decode(data))
+  const {
+    categoryDepth01,
+    subject,
+    replies,
+    idx,
+    memberId,
+    memberNickname,
+    writeDate,
+    views,
+    likes,
+    contentHtml
+  } = decoded
 
-  res.send(decode(data))
+  res.send({
+    categoryDepth01,
+    subject,
+    replies,
+    idx,
+    memberId,
+    memberNickname,
+    writeDate,
+    views,
+    likes,
+    content: contentHtml
+  })
 }
 
 export default detail

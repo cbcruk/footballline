@@ -3,6 +3,8 @@ import classNames from 'classnames'
 import { Metainfo, Spinner } from '../../shared'
 import { getHtml } from './helper'
 import styles from './style.module.css'
+import { useAtom } from 'jotai'
+import { dataSaverAtom } from '../../../atom/dataSaver'
 
 export function Viewer({ html }) {
   return (
@@ -15,11 +17,24 @@ export function Viewer({ html }) {
       dangerouslySetInnerHTML={{
         __html: html
       }}
+      onClick={(e) => {
+        const target = e.target
+
+        if (target.tagName === 'PICTURE') {
+          const img = target.querySelector('img')
+
+          img.setAttribute('src', img.dataset.src)
+
+          target.classList.add('is-done')
+        }
+      }}
     />
   )
 }
 
 function Content({ isLoading, data }) {
+  const [dataSaver] = useAtom(dataSaverAtom)
+
   if (isLoading) {
     return <Spinner />
   }
@@ -39,7 +54,7 @@ function Content({ isLoading, data }) {
           views={data?.views}
           likes={data?.likes}
         />
-        <Viewer html={getHtml(data?.contentHtml)} />
+        <Viewer html={getHtml(data?.content, dataSaver)} />
       </div>
     </>
   )
