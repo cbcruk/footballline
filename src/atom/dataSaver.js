@@ -3,7 +3,7 @@ import { atom } from 'jotai'
 const DATA_SAVER_KEY = 'DATA_SAVER'
 
 function getState() {
-  const state = localStorage.getItem(DATA_SAVER_KEY)
+  const state = JSON.parse(localStorage.getItem(DATA_SAVER_KEY))
 
   return state || false
 }
