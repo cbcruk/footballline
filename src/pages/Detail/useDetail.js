@@ -1,11 +1,14 @@
+import { useRef } from 'react'
 import { useParams } from 'react-router-dom'
-import useSWR from 'swr'
+import useAuthSWR from '../../hooks/useAuthSWR'
+import useQuery from './useQuery'
 
 function useDetail() {
   const params = useParams()
-  const { data, mutate, error, isValidating } = useSWR(
-    `/api/detail/${params.id}`
-  )
+  const query = useQuery()
+  const target = query.from === 'scrap' ? 'scrap' : 'detail'
+  const { current: url } = useRef(`/api/${target}/${params.id}`)
+  const { data, mutate, error, isValidating } = useAuthSWR(url)
 
   return {
     data,
