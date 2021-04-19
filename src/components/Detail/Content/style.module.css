@@ -10,8 +10,11 @@
   white-space: pre-line;
 }
 
-.content > *[style] {
+.content *[style] {
   all: unset !important;
+}
+
+.content > *[style] {
   display: block !important;
 }
 
@@ -56,10 +59,11 @@
   margin-top: 0;
 }
 
-.content iframe {
-  width: 100%;
-  height: calc(calc(100vw - 32px) * 0.5625);
-  aspect-ratio: 16/9;
-  border: 0;
-  vertical-align: top;
+.content iframe,
+.content iframe[style] {
+  width: 100% !important;
+  height: calc(calc(100vw - 32px) * 0.5625) !important;
+  aspect-ratio: 16/9 !important;
+  border: 0 !important;
+  vertical-align: top !important;
 }
