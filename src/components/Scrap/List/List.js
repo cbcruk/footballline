@@ -14,7 +14,7 @@ function List({ list }) {
     <IonList>
       {items.map((item) => (
         <IonItemSliding key={item.idx}>
-          <Item routerLink={`/detail/${item.idx}?from=scrap`} item={item} />
+          <Item routerLink={`/protected/${item.idx}`} item={item} />
           <IonItemOptions side="end">
             <IonItemOption
               color="danger"

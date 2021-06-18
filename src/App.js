@@ -14,7 +14,7 @@ import '@ionic/react/css/text-transformation.css'
 import '@ionic/react/css/flex-utils.css'
 import '@ionic/react/css/display.css'
 import './theme/variables.css'
-import { List, Detail, Best, Search, Scrap } from './pages'
+import { List, Detail, Best, Search, Scrap, Protected } from './pages'
 import { Spinner, Toast } from './components/shared'
 
 setupConfig({
@@ -36,6 +36,7 @@ function App() {
             />
             <Route path="/detail/:id" component={Detail} />
             <Route path="/scrap" component={Scrap} />
+            <Route path="/protected/:id" component={Protected} />
             <Redirect exact from="/" to="/board/0" />
           </IonRouterOutlet>
         </Suspense>

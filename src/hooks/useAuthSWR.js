@@ -5,7 +5,7 @@ import { fetchUserAtom } from '../atom/auth'
 
 function useAuthSWR(url) {
   const [auth] = useAtom(fetchUserAtom)
-  const result = useSWR(url, async (url) => {
+  const { data, mutate, error, isValidating } = useSWR(url, async (url) => {
     if (!auth) {
       return
     }
@@ -19,7 +19,13 @@ function useAuthSWR(url) {
     }).then((r) => r.json())
   })
 
-  return result
+  return {
+    data,
+    mutate,
+    error,
+    isValidating,
+    isLoading: !error && !data
+  }
 }
 
 export default useAuthSWR

@@ -1,12 +1,10 @@
-import React, { createContext, useCallback } from 'react'
+import React, { useCallback } from 'react'
 import { IonContent, IonPage, IonProgressBar } from '@ionic/react'
 import { useAtom } from 'jotai'
 import { getIdToken } from '@cbcruk/firebase-app'
 import { Content, Header, Comments } from '../../components/Detail'
 import { toastAtom } from '../../components/shared/Toast/Toast'
 import useDetail from './useDetail'
-
-export const DetailContext = createContext({})
 
 function Detail() {
   const { data, mutate, isLoading, isValidating } = useDetail()
