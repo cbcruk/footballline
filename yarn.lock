@@ -3380,29 +3380,30 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@ionic/core@5.6.9":
-  version "5.6.9"
-  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-5.6.9.tgz#6252c13c38011f877ce78952b572bb9e436e6daa"
-  integrity sha512-OFwlWFsei4r7rVJSQxIB7XbfeU5FI8aIEs9yDEsqBudLquph9b/EA/5MgKxfNX7ahs6/A8Och5zYhXg+dpa3zA==
+"@ionic/core@6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-6.0.1.tgz#d82500435dcc0a4db219187149d2489a6a1b8c9d"
+  integrity sha512-MrS2rxxEk44Nmas+1ccGk+VDxvhoDKbQ7g3KHQkeRtHXmWPoG47tnUHY2aCRRTeaN5wPSA14/kmCwyMMyO5A9A==
   dependencies:
-    "@stencil/core" "^2.4.0"
-    ionicons "^5.5.1"
+    "@stencil/core" "~2.11.0-0"
+    ionicons "^6.0.0"
     tslib "^2.1.0"
 
-"@ionic/react-router@5.6.9":
-  version "5.6.9"
-  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.6.9.tgz#3fe0fc09e8d958489fd58d5764cac060e479e76b"
-  integrity sha512-pGDn5FxkOi6g5OJtmIw8HQRJP49U+OjOUcx53I4S3KQ3ArGMvOxRvsWmkp+UIUPdtHAW0fl1+b/bBTgClGj0dQ==
+"@ionic/react-router@6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-6.0.1.tgz#69d8f39c8c3f17d7a1cb85549a162e021d0ff0b3"
+  integrity sha512-Guiht/Rnsh1xhTo45jnOA2+uE4LVbWjEPOrZYrxYA2obR7/5kKgXtCtJbIuKV2FOEPBHubwFizMJxcmYx59buw==
   dependencies:
+    "@ionic/react" "6.0.1"
     tslib "*"
 
-"@ionic/react@5.6.9":
-  version "5.6.9"
-  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-5.6.9.tgz#c3e4389889e271bf675d264311e433aa72d1ceda"
-  integrity sha512-HdJo7peUp7+9pEz2VXg281TGwDzvXo27ED7cuXGauC8gafMhHxCK+gV7DdBpXeoCMQBrvxxqn+fA2YMfTRUC+A==
+"@ionic/react@6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-6.0.1.tgz#b12bc1c21c29b1bcabe8868fdaabe6dcc2886884"
+  integrity sha512-XyoRDmtddtLg5X6A9FRO7JP7aUf2lBtgpKFD27H6NKRIMI2v5mXluiarrdOS4Oryj6xF2iU7i/PariLl5+rrdg==
   dependencies:
-    "@ionic/core" "5.6.9"
-    ionicons "^5.1.2"
+    "@ionic/core" "6.0.1"
+    ionicons "^6.0.0"
     tslib "*"
 
 "@istanbuljs/load-nyc-config@^1.0.0":
@@ -3799,10 +3800,20 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stencil/core@^2.4.0", "@stencil/core@^2.5.0":
+"@stencil/core@^2.5.0":
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.6.0.tgz#29da96d8b6fc83e689b9f297ef3e8b59b90a676a"
   integrity sha512-QsxWayZyusnqSZrlCl81R71rA3KqFjVVQSH4E0rGN15F1GdQaFonKlHLyCOLKLig1zzC+DQkLLiUuocexuvdeQ==
+
+"@stencil/core@~2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.10.0.tgz#acf44b9ae6578a20f0d09bf94296e833beadc885"
+  integrity sha512-15rWMTPQ/sp0lSV82HVCXkIya3QLN+uBl7pqK4JnTrp4HiLrzLmNbWjbvgCs55gw0lULbCIGbRIEsFz+Pe/Q+A==
+
+"@stencil/core@~2.11.0-0":
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.11.0.tgz#8accc2791e2c34cce2d2aa8b40864dd40be4e10c"
+  integrity sha512-/IubCWhVXCguyMUp/3zGrg3c882+RJNg/zpiKfyfJL3kRCOwe+/MD8OoAXVGdd+xAohZKIi1Ik+EHFlsptsjLg==
 
 "@storybook/addon-actions@6.2.9", "@storybook/addon-actions@^6.2.9":
   version "6.2.9"
@@ -10343,17 +10354,19 @@ invariant@^2.2.3, invariant@^2.2.4:
   dependencies:
     loose-envify "^1.0.0"
 
-ionicons@5.5.2, ionicons@^5.5.1:
+ionicons@5.5.2:
   version "5.5.2"
   resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-5.5.2.tgz#1a92315b7cb1d1d5246a85fded50b75d9cb950ec"
   integrity sha512-SHVBBtzNVQjY4jtcqKEHkqL5nIQwA/o2MIdU9JtMz8kQAB0NRVJFv5AxwmVbXXKDpxz57SiEjeLp8Uzt7jirpw==
   dependencies:
     "@stencil/core" "^2.5.0"
 
-ionicons@^5.1.2:
-  version "5.2.3"
-  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-5.2.3.tgz#af4018ea7585b1e9ae11757731c77f2f36e0c7ac"
-  integrity sha512-87qtgBkieKVFagwYA9Cf91B3PCahQbEOMwMt8bSvlQSgflZ4eE5qI4MGj2ZlIyadeX0dgo+0CzZsy3ow0CsBAg==
+ionicons@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-6.0.0.tgz#c7c0d253d62b33ba3fa47568ff58586a5d8bdcd1"
+  integrity sha512-p83W1T8jZUlllHAjuIWaDQbI36OYqdrwcf8MhYbKW7+9rjGlCMP9+5OaR0W7tl0QfM004uAiy/zkc7HTpDNKgA==
+  dependencies:
+    "@stencil/core" "~2.10.0"
 
 ip-regex@^2.1.0:
   version "2.1.0"
@@ -14477,7 +14490,7 @@ react-docgen@^5.0.0:
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
-react-dom@17.0.2:
+react-dom@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
   integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
@@ -14714,7 +14727,7 @@ react-textarea-autosize@^8.3.0:
     use-composed-ref "^1.0.0"
     use-latest "^1.0.0"
 
-react@17.0.2:
+react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
