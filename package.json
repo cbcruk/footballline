@@ -11,6 +11,8 @@
     "@cbcruk/utils": "^0.0.7",
     "@ionic/react": "6.0.1",
     "@ionic/react-router": "6.0.1",
+    "@sentry/react": "^6.16.1",
+    "@sentry/tracing": "^6.16.1",
     "anchorme": "^2.1.2",
     "axios": "^0.21.1",
     "classnames": "2.3.1",
