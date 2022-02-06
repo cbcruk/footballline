@@ -1,7 +1,6 @@
 import React from 'react'
 import { IonItem, IonLabel, IonList, IonNote } from '@ionic/react'
 import { Spinner } from '../../shared'
-import styles from './style.module.css'
 
 function List({ isLoading, data }) {
   return (
@@ -13,7 +12,7 @@ function List({ isLoading, data }) {
           routerLink={`/detail/${item.idx}`}
           detail={false}
         >
-          <IonNote slot="start" color="dark" className={styles.index}>
+          <IonNote slot="start" color="dark">
             {index + 1}
           </IonNote>
           <IonLabel>{item.subject}</IonLabel>
