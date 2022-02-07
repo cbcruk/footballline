@@ -26,3 +26,5 @@ debug.log
 webview/build
 serviceAccountKey.json
 .npmrc
+
+.next

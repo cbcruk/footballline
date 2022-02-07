@@ -1,4 +1,4 @@
-import useAuthSWR from '../../hooks/useAuthSWR'
+import useAuthSWR from '../../../hooks/useAuthSWR'
 
 function useScrap(auth) {
   const result = useAuthSWR(['/api/scrap', auth])

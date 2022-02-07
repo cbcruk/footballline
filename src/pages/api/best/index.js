@@ -1,5 +1,5 @@
-import axios from '../../src/lib/http'
-import decode from '../../src/lib/decode'
+import axios from '../../../lib/http'
+import decode from '../../../lib/decode'
 
 async function best(req, res) {
   const { categoryDepth01, type } = req.query

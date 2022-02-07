@@ -1,4 +1,4 @@
-import admin from '../../src/lib/firebaseAdmin'
+import admin from '../../../lib/firebaseAdmin'
 
 async function scrapId(req, res) {
   const db = admin.firestore()

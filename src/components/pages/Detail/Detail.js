@@ -2,8 +2,8 @@ import React, { useCallback } from 'react'
 import { IonContent, IonPage, IonProgressBar } from '@ionic/react'
 import { useAtom } from 'jotai'
 import { getIdToken } from '@cbcruk/firebase-app'
-import { Content, Header, Comments } from '../../components/Detail'
-import { toastAtom } from '../../components/shared/Toast/Toast'
+import { Content, Header, Comments } from '../../Detail'
+import { toastAtom } from '../../shared/Toast/Toast'
 import useDetail from './useDetail'
 
 function Detail() {

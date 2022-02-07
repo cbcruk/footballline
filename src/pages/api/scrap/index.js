@@ -1,5 +1,5 @@
 import { pick } from 'lodash'
-import admin from '../../src/lib/firebaseAdmin'
+import admin from '../../../lib/firebaseAdmin'
 
 async function scrap(req, res) {
   const db = admin.firestore()
