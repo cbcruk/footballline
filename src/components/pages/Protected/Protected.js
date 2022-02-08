@@ -1,7 +1,7 @@
 import { IonContent, IonPage, IonProgressBar } from '@ionic/react'
 import { useParams } from 'react-router-dom'
-import { Content, Header } from '../../components/Detail'
-import useAuthSWR from '../../hooks/useAuthSWR'
+import { Content, Header } from '../../Detail'
+import useAuthSWR from '../../../hooks/useAuthSWR'
 
 function Protected() {
   const params = useParams()

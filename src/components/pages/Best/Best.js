@@ -1,8 +1,8 @@
 import React from 'react'
 import { IonContent, IonPage } from '@ionic/react'
-import { Header, List, Segment } from '../../components/Best'
+import { Header, List, Segment } from '../../Best'
 import useBest from './useBest'
-import { BOARD_ITEMS_CATEGORY } from '../../constants'
+import { BOARD_ITEMS_CATEGORY } from '../../../constants'
 import { Helmet } from 'react-helmet'
 
 function Best() {

@@ -6,8 +6,8 @@ import {
   IonPage,
   IonProgressBar
 } from '@ionic/react'
-import { Spinner } from '../../components/shared'
-import { Header, Menu, Items } from '../../components/List'
+import { Spinner } from '../../shared'
+import { Header, Menu, Items } from '../../List'
 import useList from './useList'
 import useContentScroll from './useContentScroll'
 import useKeyboard from './useKeyboard'

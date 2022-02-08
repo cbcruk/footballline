@@ -1,8 +1,8 @@
 import { IonContent, IonPage } from '@ionic/react'
 import { useAtom } from 'jotai'
-import { fetchUserAtom } from '../../atom/auth'
-import { Header, List, SignIn } from '../../components/Scrap'
-import { Spinner } from '../../components/shared'
+import { fetchUserAtom } from '../../../atom/auth'
+import { Header, List, SignIn } from '../../Scrap'
+import { Spinner } from '../../shared'
 import useScrap from './useScrap'
 
 function Scrap() {

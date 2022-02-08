@@ -6,8 +6,8 @@ import {
   IonPage,
   IonProgressBar
 } from '@ionic/react'
-import { Items } from '../../components/List'
-import Header from '../../components/Search/Header'
+import { Items } from '../../List'
+import Header from '../../Search/Header'
 import useList from '../List/useList'
 
 function Search() {
